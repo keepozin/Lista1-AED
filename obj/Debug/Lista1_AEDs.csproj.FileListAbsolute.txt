@@ -1,0 +1,7 @@
+C:\Users\Victor Goddard\source\repos\Lista1_AEDs\bin\Debug\Lista1_AEDs.exe.config
+C:\Users\Victor Goddard\source\repos\Lista1_AEDs\bin\Debug\Lista1_AEDs.exe
+C:\Users\Victor Goddard\source\repos\Lista1_AEDs\bin\Debug\Lista1_AEDs.pdb
+C:\Users\Victor Goddard\source\repos\Lista1_AEDs\obj\Debug\Lista1_AEDs.csproj.AssemblyReference.cache
+C:\Users\Victor Goddard\source\repos\Lista1_AEDs\obj\Debug\Lista1_AEDs.csproj.CoreCompileInputs.cache
+C:\Users\Victor Goddard\source\repos\Lista1_AEDs\obj\Debug\Lista1_AEDs.exe
+C:\Users\Victor Goddard\source\repos\Lista1_AEDs\obj\Debug\Lista1_AEDs.pdb
