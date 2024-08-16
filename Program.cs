@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Collections;
+using Microsoft.SqlServer.Server;
 
 namespace Lista1_AEDs
 {
@@ -108,7 +109,57 @@ namespace Lista1_AEDs
                     #region Exercício 3
                     case 3:
                         {
+                            {
+                                int[,] matriz = new int[4, 4];
+                                int linhasNulas = 0;
+                                int colunasNulas = 0;
 
+                                for (int i = 0; i < 4; i++)
+                                {
+                                    for (int j = 0; j < 4; j++)
+                                    {
+                                        Console.Write($"Digite o elemento da linha {i} e coluna {j}: ");
+                                        matriz[i, j] = Convert.ToInt32(Console.ReadLine());
+                                    }
+                                }
+
+                                for (int i = 0; i < 4; i++)
+                                {
+                                    bool linhaNula = true;
+                                    for (int j = 0; j < 4; j++)
+                                    {
+                                        if (matriz[i, j] != 0)
+                                        {
+                                            linhaNula = false;
+                                            break;
+                                        }
+                                    }
+                                    if (linhaNula)
+                                    {
+                                        linhasNulas++;
+                                    }
+                                }
+
+                                for (int j = 0; j < 4; j++)
+                                {
+                                    bool colunaNula = true;
+                                    for (int i = 0; i < 4; i++)
+                                    {
+                                        if (matriz[i, j] != 0)
+                                        {
+                                            colunaNula = false;
+                                            break;
+                                        }
+                                    }
+                                    if (colunaNula)
+                                    {
+                                        colunasNulas++;
+                                    }
+                                }
+
+                                Console.WriteLine($"Esta matriz tem {linhasNulas} linha(s) nula(s)");
+                                Console.WriteLine($"Esta matriz tem {colunasNulas} coluna(s) nula(s)");
+                            }
                             break;
                         }
                     #endregion
@@ -191,12 +242,37 @@ namespace Lista1_AEDs
                     #region Exercício 6
                     case 6:
                         {
-                            string RetornaMatriz()
+                            string[,] RetornaMatriz()
                             {
                                 string csv = "nome,idade,sexo\nAna,25,F\nJoão,30,M\nMaria,22,F";
 
-                                return null;
+                                string[] linhaCompleta = csv.Split('\n');
+                                string[,] matriz = new string[4, 3];
+                                string[] cabecalho = linhaCompleta[0].Split(',');
+
+                                for (int i = 0; i < cabecalho.Length; i++)
+                                    matriz[0, i] = cabecalho[i];
+
+                                for (int i = 1; i < linhaCompleta.Length; i++)
+                                {
+                                    string[] dados = linhaCompleta[i].Split(',');
+                                    for (int j = 0; j < dados.Length; j++)
+                                        matriz[i, j] = dados[j];
+                                }
+
+                                return matriz;
                             }
+
+                            string[,] resultado = RetornaMatriz();
+
+                            for (int i = 0; i < resultado.GetLength(0); i++)
+                            {
+                                for (int j = 0; j < resultado.GetLength(1); j++)
+                                    Console.Write(resultado[i, j] + " ");
+
+                                Console.WriteLine();
+                            }
+
                             break;
                         }
                     #endregion
